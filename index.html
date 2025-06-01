@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -16,11 +17,30 @@
         </ul>
     <a href="mailto:alexisheraud.dev@gmail.com?subject=Hire%20Me%20Request" id="hireme">Hire Me</a>
     </header>
-    <img src="profile-picture.jpg" alt="profile-picture">
     <section id ="about">
-        <h2>I am a Devloper</h2>
-        <p>Hello! I'm a web developer with a passion for creating beautiful and functional websites.</p>
+        <div class="about-content">
+            <div class="about-text">
+                <h2>HI!<br>I'm <strong id="name">Alexis</strong><br>a Developer & Student</h2>
+                <p>
+                    I'm currently a second-year student at Epitech Nantes. 🎓<br>
+                    where I am passionate about learning and growing as a developer. 🚀<br>
+                    I enjoy working with a variety of programming languages and technologies. 💻<br>
+                    My goal is to keep learning, create impactful solutions, and contribute to exciting tech communities. 🌟
+                </p>
+                <img src="img/github.png" id="github" alt="github">
+                <img src="img/linkedin.png" id="linkedin" alt="linkedin">
+            </div>
+            <div class="profile-side">
+                <img src="img/profile-picture.jpg" id="profile-picture" alt="profile-picture">
+                <a href="cv.pdf" download class="download-cv">Download CV</a>
+            </div>
+        </div>
     </section>
+    <a href="#projects" class="scroll-down">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
+            <path d="M12 5v14M12 19l7-7M12 19l-7-7" stroke="#7c4dff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </a>
     <section id="projects">
         <h2>My Projects</h2>
         <ul>
