@@ -5,7 +5,8 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0; /* couleur de fond */
+    background-color: var(--bg); /* couleur de fond */
+    color: var(--text);
 }
 
 header {
@@ -13,9 +14,10 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 16px 32px;
-    background-color: #fff; /* Fond blanc */
+    background-color: var(--box);
+    color: var(--text);
     border-radius: 20px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 20px rgba(60, 60, 100, 0.18);
     margin: 40px auto 0 auto;
     max-width: 1100px;
     width: 100%;
@@ -25,7 +27,7 @@ header {
 header h1 {
     font-size: 1.5rem;
     font-weight: bold;
-    color: black;
+    color: var(--text);
     margin: 0;
 }
 
@@ -49,33 +51,28 @@ header h1 {
 
 .nav a {
     text-decoration: none;
-    color: inherit;
+    color: var(--text);
     font-size: 1.2rem;
     font-weight: bold;
     transition: color 0.2s, box-shadow 0.2s, transform 0.2s, background 0.2s;
 }
 
 .nav a:hover {
-    color: #ff4081; /* rose pastel */
+    color: var(--accent2); /* rose pastel */
     text-decoration-line: underline;
-    box-shadow: 0 4px 20px rgba(186, 104, 255, 0.35), 0 2px 12px rgba(255, 64, 129, 0.18);
-    transform: scale(1.08);
+    text-underline-offset: 4px;
+    text-decoration-thickness: 2px;
 }
 
 #hireme {
     text-decoration: none;
     font-size: 1.2rem;
     font-weight: bold;
-    background: linear-gradient(90deg,
-        rgb(200, 160, 255) 0%,
-        rgb(170, 190, 230) 40%,
-        rgb(255, 180, 220) 80%,
-        rgb(245, 245, 245) 100%
-    );
-    color: black;
+    background: linear-gradient(90deg, var(--accent) 0%, var(--box) 100%);
+    color: var(--text);
     padding: 10px 24px;
     border-radius: 20px;
-    border: 2px solid black;
+    border: 2px solid var(--border);
     box-shadow: 0 2px 8px rgba(186, 104, 255, 0.15), 0 1.5px 6px rgba(255, 64, 129, 0.08);
     transition: box-shadow 0.2s, transform 0.2s, background 0.2s, color 0.2s;
 }
@@ -89,7 +86,8 @@ header h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #fff; /* Fond blanc */
+    background-color: var(--box);
+    color: var(--text);
     border-radius: 20px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     margin: 45px auto;
@@ -179,7 +177,7 @@ header h1 {
 
 #about h2 {
     font-size: 2rem;
-    color: black;
+    color: var(--text);
 }
 
 #about p br {
@@ -280,13 +278,13 @@ header h1 {
 
 #projects h2 {
     font-size: 2rem;
-    color: black;
+    color: var(--text);
     margin-bottom: 30px;
 }
 
 #projects li {
     font-size: 2rem;
-    color: black;
+    color: var(--text);
     margin-bottom: 32px;
     border-radius: 20px;
     padding: 32px;
@@ -314,9 +312,10 @@ header h1 {
 }
 
 .project-card {
-    background: #fff;
+    background: var(--bg);
+    color: var(--text);
+    box-shadow: 0 4px 20px rgba(60, 60, 100, 0.18);
     border-radius: 20px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     padding: 60px;
     display: flex;
     flex-direction: column;
@@ -345,13 +344,13 @@ header h1 {
 
 .project-card p {
     font-size: 1.1rem;
-    color: #333;
+    color: var(--text-secondary);
     text-align: center;
     margin: 0;
 }
 
 #contact {
-    background: #fff;
+    background: var(--box);
     border-radius: 20px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     max-width: 700px;
@@ -362,7 +361,7 @@ header h1 {
 
 #contact h2 {
     font-size: 2rem;
-    color: black;
+    color: var(--text);
     margin-bottom: 24px;
 }
 
@@ -373,14 +372,14 @@ header h1 {
 }
 
 .contact-mail {
-    color: #7c4dff;
+    color: var(--accent);
     font-weight: bold;
     text-decoration: none;
     transition: color 0.2s;
 }
 
 .contact-mail:hover {
-    color: #ff4081; /* rose pastel */
+    color: var(--accent2); /* rose pastel */
     text-decoration: underline;
 }
 
@@ -409,7 +408,7 @@ header h1 {
     height: 56px;
     border: none;
     border-radius: 50%;
-    background: linear-gradient(135deg, #7c4dff 0%, #ff4081 100%);
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
     color: #fff;
     font-size: 2rem;
     cursor: pointer;
@@ -426,10 +425,80 @@ header h1 {
     opacity: 1;
     transform: scale(1.13) rotate(-12deg);
     box-shadow: 0 12px 36px rgba(124, 77, 255, 0.28), 0 4px 16px rgba(255, 64, 129, 0.18);
-    background: linear-gradient(135deg, #ff4081 0%, #7c4dff 100%);
+    background: linear-gradient(135deg, var(--accent2) 0%, var(--accent) 100%);
 }
 
 header, #about, .about-content, main, section, footer {
     position: relative;
     z-index: 1;
+}
+
+:root {
+    --bg: #f0f0f0;
+    --box: #fff;
+    --text: #181828;
+    --text-secondary: #333;
+    --accent: #7c4dff;
+    --accent2: #ff4081;
+    --border: #000;
+}
+
+body.dark {
+    --bg: #181828;
+    --box: #23233a;
+    --text: #fff;
+    --text-secondary: #ccc;
+    --accent: #7c4dff;
+    --accent2: #ff4081;
+    --border: #7c4dff;
+}
+
+body.dark p,
+body.dark .project-card p,
+body.dark #about p,
+body.dark #contact p,
+body.dark #projects p {
+    color: #fff !important;
+}
+
+body.dark p {
+    color: #fff;
+}
+
+.toggle-switch {
+    width: 54px;
+    height: 28px;
+    border: none;
+    border-radius: 14px;
+    background: linear-gradient(90deg, #7c4dff 0%, #ff4081 100%);
+    position: relative;
+    cursor: pointer;
+    transition: background 0.3s;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin-left: 18px;
+    outline: none;
+}
+.toggle-thumb {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #fff;
+    position: absolute;
+    left: 3px;
+    top: 2px;
+    transition: left 0.3s, background 0.3s;
+    box-shadow: 0 2px 8px rgba(124,77,255,0.18);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+}
+body.dark .toggle-switch {
+    background: linear-gradient(90deg, #23233a 0%, #7c4dff 100%);
+}
+body.dark .toggle-thumb {
+    left: 27px;
+    background: #181828;
 }

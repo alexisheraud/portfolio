@@ -19,6 +19,9 @@
             <li><a href="#working">Working</a></li>
         </ul>
     <a href="mailto:alexisheraud.dev@gmail.com?subject=Hire%20Me%20Request" id="hireme">Hire Me</a>
+    <button id="theme-toggle" aria-label="Toggle theme" class="toggle-switch">
+        <span class="toggle-thumb"></span>
+    </button>
     </header>
     <section id ="about">
         <div class="about-content">
@@ -94,7 +97,7 @@
     <script>
 VANTA.NET({
   el: "#vanta-bg",
-  color: 0x7c4dff,
+  color: 0x000000,
   backgroundColor: 0xf0f0f0,
   points: 12.0,
   maxDistance: 22.0,
@@ -113,6 +116,20 @@ window.addEventListener('scroll', () => {
 backToTop.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 });
+</script>
+    <script>
+const toggle = document.getElementById('theme-toggle');
+const thumb = toggle.querySelector('.toggle-thumb');
+const body = document.body;
+
+function updateThemeIcon() {
+    thumb.textContent = body.classList.contains('dark') ? '☀️' : '🌙';
+}
+toggle.addEventListener('click', () => {
+    body.classList.toggle('dark');
+    updateThemeIcon();
+});
+updateThemeIcon();
 </script>
 </body>
 </html>
